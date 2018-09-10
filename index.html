@@ -1,23 +1,806 @@
+
 <html lang='zh-CN'>
 <head>
 <title>Versace Translator</title>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<style>
+.red {color: 'red'}
+pre {border: 1px solid black;}
+#copy, #result {display: none;}
+</style>
 </head>
 <body>
-<h1>Regex Test</h1>
+<h1>Versace - Jenny Wang</h1>
 <button id='run'>run</button>
 <br>
 <br>
-Translation:
-<br>
+<div class='error'>
+</div>
+<h3>Translation</h3>
+<button id='copy'>Copy to clipboard</button>
 <pre id='result'>
 
 </pre>
 <br>
-Original:
+<h3>Original</h3>
 <br>
 <textarea id='original' rows=40 cols=200>
 Fibers Composition Details
+1.Outer Fabric:100% PY; 2.Lining:100% CO; Lining 1:37% CU, 63% VI
+Lining 1:100% CO; Outside:100% VL
+Lining 1:100% CO; Outside:100% VL
+2.Trim:100% NY; Lining 1:100% CO; Outside:100% PL; Trim:100% VL
+1.Outer Fabric:1% PA, 20% PM, 79% VI
+1.Outer Fabric:1% PA, 20% PM, 79% VI
+1.Outer Fabric:1% PA, 20% PM, 79% VI
+2.Trim:100% NY; Lining 1:100% CO; Outside:100% PL; Trim:100% VL
+2.Trim:100% NY; Lining 1:100% CO; Outside:100% NY; Trim:100% VL
+Lining 1:100% CO; Outside:100% PL; Trim:100% VL
+2.Trim:100% NY; Lining 1:100% CO; Outside:100% PL; Trim:100% VL
+1.Outer Fabric:100% PA; 2.Inner:10% WO, 90% VI; 2.Lining:100% CO; Inner 1:100% PL; Lining 1:100% PL; PADDING:20% OC, 80% PD
+1.Outer Fabric:100% PA; 2.Inner:10% WO, 90% VI; 2.Lining:100% CO; Inner 1:100% PL; Lining 1:100% PL; PADDING:20% OC, 80% PD
+1.Outer Fabric:100% CO; 2.EMBROIDERY:100% PL; 2.Outer Fabric:18% VI, 82% AC; 2.Trim:100% CO; EMBROIDERY:100% PL; Trim:7% PL, 45% PA, 48% CO
+1.Outer Fabric:100% CO; 2.EMBROIDERY:100% PL; 2.Outer Fabric:18% VI, 82% AC; 2.Trim:100% CO; EMBROIDERY:100% PL; Trim:7% PL, 45% PA, 48% CO
+1.Outer Fabric:100% CO; 2.EMBROIDERY:100% PL; 2.Outer Fabric:18% VI, 82% AC; 2.Trim:100% CO; EMBROIDERY:100% PL; Trim:7% PL, 45% PA, 48% CO
+1.Outer Fabric:1% PA, 20% PM, 79% VI
+1.Outer Fabric:1% PA, 20% PM, 79% VI
+1.Outer Fabric:1% PA, 20% PM, 79% VI
+1.Outer Fabric:100% PA; 2.Inner:10% WO, 90% VI; 2.Lining:100% CO; Inner 1:100% PL; Lining 1:100% PL; PADDING:20% OC, 80% PD
+1.Outer Fabric:100% PA; 2.Inner:10% WO, 90% VI; 2.Lining:100% CO; Inner 1:100% PL; Lining 1:100% PL; PADDING:20% OC, 80% PD
+1.Outer Fabric:100% CO; 2.EMBROIDERY:100% PL; 2.Outer Fabric:18% VI, 82% AC; 2.Trim:100% CO; EMBROIDERY:100% PL; Trim:7% PL, 45% PA, 48% CO
+1.Outer Fabric:100% CO; 2.EMBROIDERY:100% PL; 2.Outer Fabric:18% VI, 82% AC; 2.Trim:100% CO; EMBROIDERY:100% PL; Trim:7% PL, 45% PA, 48% CO
+1.Outer Fabric:100% CO; 2.EMBROIDERY:100% PL; 2.Outer Fabric:18% VI, 82% AC; 2.Trim:100% CO; EMBROIDERY:100% PL; Trim:7% PL, 45% PA, 48% CO
+1.Outer Fabric:100% CO; 2.EMBROIDERY:100% PL; 2.Outer Fabric:18% VI, 82% AC; 2.Trim:100% CO; EMBROIDERY:100% PL; Trim:7% PL, 45% PA, 48% CO
+1.Outer Fabric:1% PA, 20% PM, 79% VI
+1.Outer Fabric:1% PA, 20% PM, 79% VI
+1.Outer Fabric:1% PA, 20% PM, 79% VI
+1.Outer Fabric:100% WO
+1.Outer Fabric:100% WO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% PA; 2.Inner:10% WO, 90% VI; 2.Lining:100% CO; Inner 1:100% PL; Lining 1:100% PL; PADDING:20% OC, 80% PD
+1.Outer Fabric:100% PA; 2.Inner:10% WO, 90% VI; 2.Lining:100% CO; Inner 1:100% PL; Lining 1:100% PL; PADDING:20% OC, 80% PD
+1.Outer Fabric:100% PA; 2.Inner:10% WO, 90% VI; 2.Lining:100% CO; Inner 1:100% PL; Lining 1:100% PL; PADDING:20% OC, 80% PD
+1.Outer Fabric:100% PA; 2.Inner:10% WO, 90% VI; 2.Lining:100% CO; Inner 1:100% PL; Lining 1:100% PL; PADDING:20% OC, 80% PD
+1.Outer Fabric:100% PA; 2.Inner:10% WO, 90% VI; 2.Lining:100% CO; Inner 1:100% PL; Lining 1:100% PL; PADDING:20% OC, 80% PD
+1.Outer Fabric:100% PA; 2.Inner:10% WO, 90% VI; 2.Lining:100% CO; Inner 1:100% PL; Lining 1:100% PL; PADDING:20% OC, 80% PD
+1.Outer Fabric:100% PA; 2.Inner:10% WO, 90% VI; 2.Lining:100% CO; Inner 1:100% PL; Lining 1:100% PL; PADDING:20% OC, 80% PD
+1.Outer Fabric:100% PA; 2.Inner:10% WO, 90% VI; 2.Lining:100% CO; Inner 1:100% PL; Lining 1:100% PL; PADDING:20% OC, 80% PD
+1.Outer Fabric:100% PA; 2.Inner:10% WO, 90% VI; 2.Lining:100% CO; Inner 1:100% PL; Lining 1:100% PL; PADDING:20% OC, 80% PD
+1.Outer Fabric:100% PA; 2.Inner:10% WO, 90% VI; 2.Lining:100% CO; Inner 1:100% PL; Lining 1:100% PL; PADDING:20% OC, 80% PD
+1.Outer Fabric:100% PA; 2.Inner:10% WO, 90% VI; 2.Lining:100% CO; Inner 1:100% PL; Lining 1:100% PL; PADDING:20% OC, 80% PD
+1.Outer Fabric:100% PA; 2.Inner:10% WO, 90% VI; 2.Lining:100% CO; Inner 1:100% PL; Lining 1:100% PL; PADDING:20% OC, 80% PD
+1.Outer Fabric:100% PA; 2.Inner:10% WO, 90% VI; 2.Lining:100% CO; Inner 1:100% PL; Lining 1:100% PL; PADDING:20% OC, 80% PD
+1.Outer Fabric:100% PA; 2.Inner:10% WO, 90% VI; 2.Lining:100% CO; Inner 1:100% PL; Lining 1:100% PL; PADDING:20% OC, 80% PD
+1.Outer Fabric:100% SE; 2.Lining:100% CO; 2.Outer Fabric:100% VI; Inner 1:10% WO, 90% VI; Lining 1:3% EA, 40% PA, 57% VI; Trim:6% EA, 6% PA, 88% CO
+1.Outer Fabric:100% SE; 2.Lining:100% CO; 2.Outer Fabric:100% VI; Inner 1:10% WO, 90% VI; Lining 1:3% EA, 40% PA, 57% VI; Trim:6% EA, 6% PA, 88% CO
+1.Outer Fabric:100% CO; 2.EMBROIDERY:100% PL; 2.Outer Fabric:18% VI, 82% AC; 2.Trim:100% CO; EMBROIDERY:100% PL; Trim:7% PL, 45% PA, 48% CO
+1.Outer Fabric:100% CO; 2.EMBROIDERY:100% PL; 2.Outer Fabric:18% VI, 82% AC; 2.Trim:100% CO; EMBROIDERY:100% PL; Trim:7% PL, 45% PA, 48% CO
+1.Outer Fabric:100% CO; 2.EMBROIDERY:100% PL; 2.Outer Fabric:18% VI, 82% AC; 2.Trim:100% CO; EMBROIDERY:100% PL; Trim:7% PL, 45% PA, 48% CO
+1.Outer Fabric:100% CO; 2.EMBROIDERY:100% PL; 2.Outer Fabric:18% VI, 82% AC; 2.Trim:100% CO; EMBROIDERY:100% PL; Trim:7% PL, 45% PA, 48% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+Lining 1:100% PA; Outside:100% LE; Trim:100% LE
+Lining 1:100% CO; Outside:100% LE
+Lining 1:100% CO; Outside:100% LE
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+Outside:100% ME; Trim:100% LE
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+1.Outer Fabric:100% SE; Lining 1:40% SE, 60% CU
+Outside:100% ME
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Outside:100% ME
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:20% PL, 80% CO; Trim:2% EA, 18% PA, 80% PL
+1.Outer Fabric:100% VI
+1.Outer Fabric:100% VI
+1.Outer Fabric:100% VI
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; 2.Lining:100% CO; 2.Outer Fabric:100% SE; 2.Trim:2% PL, 98% VI; Lining 1:100% SE; PADDING:30% LY, 70% PL; Trim:100% CO
+1.Outer Fabric:100% PL; 2.Outer Fabric:37% CO, 63% PA; Lining 1:100% CO; Trim:5% EA, 95% WV
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:20% EA, 80% PA; Trim:29% SE, 71% AC
+1.Outer Fabric:20% EA, 80% PA; Trim:29% SE, 71% AC
+1.Outer Fabric:20% EA, 80% PA; Trim:29% SE, 71% AC
+1.Outer Fabric:20% EA, 80% PA; Trim:29% SE, 71% AC
+Lining 1:100% PA; Outside:100% LE; Trim:100% LE
+Lining 1:100% PA; Outside:100% LE; Trim:100% LE
+Lining 1:100% CO; Outside:100% LE
+Lining 1:100% CO; Outside:100% LE
+Lining 1:100% CO; Outside:100% LE
+Inner 1:34% PA, 66% VI; Outside:100% LE
+Lining 1:40% PU, 60% PA; Outside:100% LE; Trim:100% SE
+1.Outer Fabric:2% EA, 98% CO; Lining 1:3% EA, 97% CO
+1.Outer Fabric:100% VI; 2.Lining:100% CU; 2.Outer Fabric:100% PL; Lining 1:100% SE; Lining 3:100% CO
+1.Outer Fabric:100% VI; 2.Lining:100% CU; 2.Outer Fabric:100% PL; Lining 1:100% SE; Lining 3:100% CO
+1.Outer Fabric:100% VI; 2.Outer Fabric:100% PL; Lining 1:29% SE, 71% AC; Trim:100% SE
+1.Outer Fabric:100% VI; 2.Outer Fabric:26% VI, 74% AC; Lining 1:29% SE, 71% AC
+1.Outer Fabric:2% EA, 98% WO; Lining 1:29% SE, 71% AC
+Inner 1:10% SP, 90% PL; Outside:18% SE, 82% VI; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:18% SE, 82% VI; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:18% SE, 82% VI; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:18% SE, 82% VI; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:18% SE, 82% VI; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Outside:100% ME; Trim:100% LE
+Outside:100% LE
+Outside:100% LE
+Outside:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PL; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PL; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PL; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+1.Outer Fabric:100% SE; Lining 1:40% SE, 60% CU
+1.Outer Fabric:100% SE; Lining 1:40% SE, 60% CU
+1.Outer Fabric:100% WO
+1.Outer Fabric:100% CO; Lining 1:100% PL; PADDING:100% PL; Trim:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% PL; PADDING:100% PL; Trim:100% CO
+1.Outer Fabric:100% SE; Lining 1:40% SE, 60% CU
+1.Outer Fabric:100% SE
+1.Outer Fabric:2% EA, 28% PL, 70% CO; 2.Outer Fabric:6% EA, 16% PA, 78% VI; Lining 1:3% EA, 97% CO
+1.Outer Fabric:2% EA, 28% PL, 70% CO; 2.Outer Fabric:6% EA, 16% PA, 78% VI; Lining 1:3% EA, 97% CO
+1.Outer Fabric:2% EA, 28% PL, 70% CO; Lining 1:3% EA, 97% CO
+1.Outer Fabric:100% CO; Lining 1:100% PL; PADDING:100% PL; Trim:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% PL; PADDING:100% PL; Trim:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% PL; PADDING:100% PL; Trim:100% CO
+Inner 1:10% SP, 90% PL; Outside:100% LE; Sole:100% GO; Trim:15% EA, 85% PL
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+1.Outer Fabric:100% PA; 2.Lining:100% CO; Lining 1:100% CU
+1.Outer Fabric:100% PA; 2.Lining:100% CO; Lining 1:100% CU
+1.Outer Fabric:100% PA; 2.Lining:100% CO; Lining 1:100% CU
+1.Outer Fabric:100% CO; Trim:5% EA, 95% CO
+1.Outer Fabric:100% CO; Trim:5% EA, 95% CO
+1.Outer Fabric:100% CO; Trim:5% EA, 95% CO
+1.Outer Fabric:100% CO; Trim:5% EA, 95% CO
+1.Outer Fabric:100% CO; Trim:5% EA, 95% CO
+1.Outer Fabric:100% CO; Trim:5% EA, 95% CO
+1.Outer Fabric:100% CO; Trim:5% EA, 95% CO
+1.Outer Fabric:100% CO; Trim:5% EA, 95% CO
+1.Outer Fabric:100% CO; Trim:5% EA, 95% CO
+1.Outer Fabric:100% CO; Trim:5% EA, 95% CO
+1.Outer Fabric:100% CO; Trim:5% EA, 95% CO
+1.Outer Fabric:100% CO; Trim:5% EA, 95% CO
+1.Outer Fabric:100% CO; Trim:5% EA, 95% CO
+1.Outer Fabric:100% CO; Trim:5% EA, 95% CO
+1.Outer Fabric:100% CO; Trim:5% EA, 95% CO
+1.Outer Fabric:100% CO; Trim:5% EA, 95% CO
+1.Outer Fabric:100% CO; Trim:5% EA, 95% CO
+1.Outer Fabric:100% CO; Trim:5% EA, 95% CO
+1.Outer Fabric:100% CO; Trim:5% EA, 95% CO
+1.Outer Fabric:100% CO; Trim:5% EA, 95% CO
+1.Outer Fabric:100% CO; Trim:5% EA, 95% CO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% LE
+Inner 1:100% LE; Outside:100% LE; Sole:100% LE
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% PA; 2.Lining:100% CO; Lining 1:100% PA; PADDING:10% OC, 90% PD
+1.Outer Fabric:2% EA, 98% CO; Lining 1:35% CO, 65% PL
+1.Outer Fabric:100% PA; 2.Lining:100% CO; Lining 1:100% PA; PADDING:10% OC, 90% PD
+1.Outer Fabric:2% EA, 98% CO; Lining 1:35% CO, 65% PL
+1.Outer Fabric:2% EA, 98% CO; Lining 1:35% CO, 65% PL
+1.Outer Fabric:2% EA, 98% CO; Lining 1:35% CO, 65% PL
+1.Outer Fabric:2% EA, 98% CO; Lining 1:35% CO, 65% PL
+1.Outer Fabric:2% EA, 98% CO; Lining 1:35% CO, 65% PL
+1.Outer Fabric:100% PL; 2.Lining:100% SE; Lining 1:100% PL; Lining 3:100% CO
+1.Outer Fabric:100% PA; 2.Lining:100% CO; Lining 1:100% PA; PADDING:10% OC, 90% PD
+1.Outer Fabric:100% PL; 2.Lining:100% SE; Lining 1:100% PL; Lining 3:100% CO
+1.Outer Fabric:100% PA; 2.Lining:100% CO; Lining 1:100% PA; PADDING:10% OC, 90% PD
+1.Outer Fabric:2% EA, 98% CO; Lining 1:35% CO, 65% PL
+1.Outer Fabric:2% EA, 98% CO; Lining 1:35% CO, 65% PL
+1.Outer Fabric:2% EA, 98% CO; Lining 1:35% CO, 65% PL
+1.Outer Fabric:2% EA, 98% CO; Lining 1:3% EA, 97% CO
+1.Outer Fabric:2% EA, 98% CO; Lining 1:3% EA, 97% CO
+1.Outer Fabric:2% EA, 98% CO; Lining 1:35% CO, 65% PL
+1.Outer Fabric:2% EA, 98% CO; Lining 1:3% EA, 97% CO
+1.Outer Fabric:2% EA, 98% CO; Lining 1:3% EA, 97% CO
+1.Outer Fabric:2% EA, 98% CO; Lining 1:35% CO, 65% PL
+1.Outer Fabric:2% EA, 98% CO; Lining 1:35% CO, 65% PL
+1.Outer Fabric:2% EA, 98% CO; Lining 1:3% EA, 97% CO
+1.Outer Fabric:2% EA, 98% CO; Lining 1:3% EA, 97% CO
+1.Outer Fabric:2% EA, 98% CO; Lining 1:35% CO, 65% PL
+1.Outer Fabric:2% EA, 98% CO; Lining 1:35% CO, 65% PL
+1.Outer Fabric:2% EA, 98% CO; Lining 1:3% EA, 97% CO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% LE
+Outside:100% ME; Trim:100% LE
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% LE
+Inner 1:100% LE; Outside:100% VI; Sole:100% LE
+Inner 1:100% LE; Outside:100% VI; Sole:100% LE
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% LE
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:10% EA, 90% PL; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:5% EA, 95% VI
+1.Outer Fabric:5% EA, 95% VI
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:12% PL, 28% WO, 60% VI
+1.Outer Fabric:12% PL, 28% WO, 60% VI
+1.Outer Fabric:100% CO
+Outside:100% LE
+Outside:100% LE
+Outside:100% LE
+Lining 1:10% PC, 90% CO; Outside:100% LE
+Lining 1:10% PC, 90% CO; Outside:100% LE
+Lining 1:10% PC, 90% CO; Outside:100% LE
+Lining 1:10% PC, 90% CO; Outside:100% LE
+Lining 1:10% PC, 90% CO; Outside:100% LE
+Lining 1:10% PC, 90% CO; Outside:100% LE
+Outside:40% PN, 60% LE
+Outside:100% ME; Trim:100% LE
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:18% SE, 82% VI; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:18% SE, 82% VI; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% LE; Sole:100% GO; Trim:15% EA, 85% PL
+Inner 1:10% SP, 90% PL; Outside:18% SE, 82% VI; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:18% SE, 82% VI; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:18% SE, 82% VI; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:18% SE, 82% VI; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:18% SE, 82% VI; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:18% SE, 82% VI; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:18% SE, 82% VI; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:18% SE, 82% VI; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:18% SE, 82% VI; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:18% SE, 82% VI; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:18% SE, 82% VI; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% WO; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+Inner 1:10% SP, 90% PL; Outside:100% PA; Sole:100% GO; Trim:100% LE
+1.Outer Fabric:100% SE; 2.Outer Fabric:100% SE
+1.Outer Fabric:100% SE; Trim:100% SE
+1.Outer Fabric:100% SE; 2.Outer Fabric:100% SE; 2.Trim:100% VL; Trim:100% AOS
+1.Outer Fabric:20% EA, 80% PA; Trim:29% SE, 71% AC
+1.Outer Fabric:100% SE; Trim:100% SE
+1.Outer Fabric:100% SE; Trim:100% SE
+1.Outer Fabric:100% SE
+1.Outer Fabric:100% SE; 2.Outer Fabric:100% SE; 2.Trim:100% VL; Trim:100% AOS
+1.Outer Fabric:100% PA; Trim:100% AOS
+1.Outer Fabric:100% PA; Trim:100% AOS
+1.Outer Fabric:100% PA; Trim:100% AOS
+1.Outer Fabric:100% PA; Trim:100% AOS
+1.Outer Fabric:100% PA; Trim:100% AOS
+1.Outer Fabric:100% PA; Trim:100% AOS
+1.Outer Fabric:100% PA; Trim:100% AOS
+1.Outer Fabric:100% PA; Trim:100% AOS
+1.Outer Fabric:100% PA; Trim:100% AOS
+1.Outer Fabric:100% PA; Trim:100% AOS
+1.Outer Fabric:100% PA; Trim:100% AOS
+1.Outer Fabric:100% PA; Trim:100% AOS
+1.Outer Fabric:100% PA; Trim:100% AOS
+1.Outer Fabric:100% PA; Trim:100% AOS
+1.Outer Fabric:100% PA; Trim:100% AOS
+1.Outer Fabric:100% PA; Trim:100% AOS
+1.Outer Fabric:100% PA; Trim:100% AOS
+1.Outer Fabric:100% PA; Trim:100% AOS
+1.Outer Fabric:100% PA; Trim:100% AOS
+1.Outer Fabric:100% PA; Trim:100% AOS
+1.Outer Fabric:100% PA; Trim:100% AOS
+Inner 1:100% LE; Outside:100% LE
+Inner 1:100% LE; Outside:100% LE
+Inner 1:100% LE; Outside:100% LE
+1.Outer Fabric:1% SE, 2% WS, 97% WO; Lining 1:100% SE; Trim:100% VO
+1.Outer Fabric:1% SE, 2% WS, 97% WO; Lining 1:100% SE; Trim:100% VO
+1.Outer Fabric:1% SE, 2% WS, 97% WO; Lining 1:100% SE; Trim:100% VO
+1.Outer Fabric:1% SE, 2% WS, 97% WO; Lining 1:100% SE; Trim:100% VO
+1.Outer Fabric:1% SE, 2% WS, 97% WO; Lining 1:100% SE; Trim:100% VO
+1.Outer Fabric:1% SE, 2% WS, 97% WO; Lining 1:100% SE; Trim:100% VO
+1.Outer Fabric:1% SE, 2% WS, 97% WO; Lining 1:100% SE; Trim:100% VO
+1.Outer Fabric:1% SE, 2% WS, 97% WO; Lining 1:100% SE; Trim:100% VO
+1.Outer Fabric:1% SE, 2% WS, 97% WO; Lining 1:100% SE; Trim:100% VO
+1.Outer Fabric:1% SE, 2% WS, 97% WO; Lining 1:100% SE; Trim:100% VO
+1.Outer Fabric:1% SE, 2% WS, 97% WO; Lining 1:100% SE; Trim:100% VO
+1.Outer Fabric:12% PL, 28% WO, 60% VI
+1.Outer Fabric:12% PL, 28% WO, 60% VI
+1.Outer Fabric:12% PL, 28% WO, 60% VI
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:1% PA, 1% PM, 9% AC, 14% VI, 18% WS, 57% WO
+1.Outer Fabric:12% PL, 28% WO, 60% VI
+1.Outer Fabric:12% PL, 28% WO, 60% VI
+1.Outer Fabric:12% PL, 28% WO, 60% VI
+Lining 1:100% PA; Outside:100% LE; Trim:100% LE
+Lining 1:100% PA; Outside:100% LE; Trim:100% LE
+Lining 1:100% PA; Outside:100% LE; Trim:100% LE
+Lining 1:100% PA; Outside:100% LE; Trim:100% LE
+Lining 1:100% PA; Outside:100% LE; Trim:100% LE
+Lining 1:100% PA; Outside:100% LE; Trim:100% LE
+Lining 1:100% PA; Outside:100% LE; Trim:100% LE
+Lining 1:100% PA; Outside:100% LE; Trim:100% LE
+Lining 1:100% PA; Outside:100% LE; Trim:100% LE
+Lining 1:100% PA; Outside:100% LE; Trim:100% LE
+Lining 1:100% CO; Outside:100% LE
+Lining 1:100% CO; Outside:100% LE
+Lining 1:100% CO; Outside:100% LE
+Lining 1:100% CO; Outside:100% LE
+Lining 1:100% CO; Outside:100% LE
+Lining 1:100% CO; Outside:100% LE
+Lining 1:100% LE; Outside:100% LE; Trim:100% LE
+Lining 1:100% CO; Outside:100% LE
+Lining 1:100% LE; Outside:100% LE; Trim:100% LE
+Lining 1:100% LE; Outside:100% LE; Trim:100% LE
+Lining 1:10% PC, 90% PA; Outside:100% CO; Trim:100% LE
+Lining 1:10% PC, 90% CO; Outside:100% LE
+Lining 1:10% PC, 90% CO; Outside:100% LE
+Outside:100% LE
+1.Outer Fabric:2% EA, 98% WO; 2.Outer Fabric:26% VI, 74% AC; Lining 1:41% CU, 59% VI
+1.Outer Fabric:2% EA, 98% WO; 2.Outer Fabric:100% WO; Lining 1:4% EA, 96% CU
+1.Outer Fabric:2% EA, 98% WO; 2.Outer Fabric:100% WO; Lining 1:4% EA, 96% CU
+1.Outer Fabric:2% EA, 98% CO; Lining 1:3% EA, 97% CO; Trim:100% WO
+1.Outer Fabric:2% EA, 98% CO; Lining 1:3% EA, 97% CO; Trim:100% WO
+1.Outer Fabric:2% EA, 98% WO; Lining 1:29% SE, 71% AC
+1.Outer Fabric:2% EA, 98% CO; Lining 1:3% EA, 97% CO; Trim:100% WO
+1.Outer Fabric:2% EA, 98% CO; Lining 1:35% CO, 65% PL
+1.Outer Fabric:7% EA, 44% PA, 49% VI; Lining 1:29% SE, 71% AC
+1.Outer Fabric:2% EA, 98% CO; Lining 1:3% EA, 97% CO; Trim:100% WO
+1.Outer Fabric:2% EA, 98% CO; Lining 1:3% EA, 97% CO; Trim:100% WO
+1.Outer Fabric:2% EA, 98% CO; Lining 1:3% EA, 97% CO; Trim:100% WO
+1.Outer Fabric:2% EA, 98% WO; Lining 1:29% SE, 71% AC
+1.Outer Fabric:2% EA, 98% WO; Lining 1:29% SE, 71% AC
+1.Outer Fabric:2% EA, 98% CO; Lining 1:3% EA, 97% CO; Trim:100% WO
+1.Outer Fabric:2% EA, 98% WO; 2.Outer Fabric:26% VI, 74% AC; Lining 1:41% CU, 59% VI
+1.Outer Fabric:2% EA, 98% WO; 2.Outer Fabric:26% VI, 74% AC; Lining 1:41% CU, 59% VI
+1.Outer Fabric:2% EA, 98% CO; Lining 1:3% EA, 97% CO; Trim:100% WO
+1.Outer Fabric:2% EA, 98% CO; Lining 1:3% EA, 97% CO; Trim:100% WO
+1.Outer Fabric:2% EA, 98% CO; Lining 1:3% EA, 97% CO; Trim:100% WO
+1.Outer Fabric:2% EA, 98% CO; Lining 1:3% EA, 97% CO; Trim:100% WO
+1.Outer Fabric:2% EA, 98% WO; 2.Outer Fabric:100% WO; Lining 1:4% EA, 96% CU
+1.Outer Fabric:2% EA, 98% WO; 2.Outer Fabric:100% WO; Lining 1:4% EA, 96% CU
+1.Outer Fabric:2% EA, 98% WO; 2.Outer Fabric:100% WO; Lining 1:4% EA, 96% CU
+1.Outer Fabric:2% EA, 98% CO; Lining 1:3% EA, 97% CO; Trim:100% WO
+1.Outer Fabric:100% PL; 2.Inner:100% PL; Inner 1:100% PL; Lining 1:100% PL; PADDING:10% OC, 90% PD; Trim:18% SE, 82% VI
+1.Outer Fabric:100% VI; 2.Lining:100% CU; 2.Outer Fabric:100% PL; Lining 1:100% SE; Lining 3:100% CO
+1.Outer Fabric:100% VI; 2.Lining:100% CU; 2.Outer Fabric:100% PL; Lining 1:100% SE; Lining 3:100% CO
+1.Outer Fabric:100% VI; 2.Lining:100% CU; 2.Outer Fabric:100% PL; Lining 1:100% SE; Lining 3:100% CO
+1.Outer Fabric:100% VI; 2.Outer Fabric:26% VI, 74% AC; Lining 1:29% SE, 71% AC
+1.Outer Fabric:2% EA, 98% WO; 2.Outer Fabric:100% WO; Lining 1:4% EA, 96% CU
+1.Outer Fabric:100% SE; 2.Outer Fabric:100% SE; 3.Outer Fabric:100% SE
+1.Outer Fabric:100% PL; 2.Inner:100% PL; Inner 1:100% PL; Lining 1:100% PL; PADDING:10% OC, 90% PD; Trim:18% SE, 82% VI
+1.Outer Fabric:100% PL; 2.Inner:100% PL; Inner 1:100% PL; Lining 1:100% PL; PADDING:10% OC, 90% PD; Trim:18% SE, 82% VI
+1.Outer Fabric:100% VI; 2.Lining:100% CU; 2.Outer Fabric:100% PL; Lining 1:100% SE; Lining 3:100% CO
+1.Outer Fabric:100% VI; 2.Lining:100% CU; 2.Outer Fabric:100% PL; Lining 1:100% SE; Lining 3:100% CO
+1.Outer Fabric:100% PL; 2.Inner:100% PL; Inner 1:100% PL; Lining 1:100% PL; PADDING:10% OC, 90% PD; Trim:18% SE, 82% VI
+1.Outer Fabric:100% VI; 2.Lining:100% CU; 2.Outer Fabric:100% PL; Lining 1:100% SE; Lining 3:100% CO
+1.Outer Fabric:100% PL; 2.Inner:100% PL; Inner 1:100% PL; Lining 1:100% PL; PADDING:10% OC, 90% PD; Trim:18% SE, 82% VI
+1.Outer Fabric:100% PL; 2.Inner:100% PL; Inner 1:100% PL; Lining 1:100% PL; PADDING:10% OC, 90% PD; Trim:18% SE, 82% VI
+1.Outer Fabric:100% PL; 2.Inner:100% PL; Inner 1:100% PL; Lining 1:100% PL; PADDING:10% OC, 90% PD; Trim:18% SE, 82% VI
+1.Outer Fabric:100% PL; 2.Inner:100% PL; Inner 1:100% PL; Lining 1:100% PL; PADDING:10% OC, 90% PD; Trim:18% SE, 82% VI
+1.Outer Fabric:100% PL; 2.Inner:100% PL; Inner 1:100% PL; Lining 1:100% PL; PADDING:10% OC, 90% PD; Trim:18% SE, 82% VI
+1.Outer Fabric:100% PL; 2.Inner:100% PL; Inner 1:100% PL; Lining 1:100% PL; PADDING:10% OC, 90% PD; Trim:18% SE, 82% VI
+1.Outer Fabric:100% PL; 2.Inner:100% PL; Inner 1:100% PL; Lining 1:100% PL; PADDING:10% OC, 90% PD; Trim:18% SE, 82% VI
+1.Outer Fabric:100% VI; 2.Lining:100% CU; 2.Outer Fabric:100% PL; Lining 1:100% SE; Lining 3:100% CO
+1.Outer Fabric:100% PL; 2.Inner:100% PL; Inner 1:100% PL; Lining 1:100% PL; PADDING:10% OC, 90% PD; Trim:18% SE, 82% VI
+1.Outer Fabric:100% PL; 2.Inner:100% PL; Inner 1:100% PL; Lining 1:100% PL; PADDING:10% OC, 90% PD; Trim:18% SE, 82% VI
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% PL; 2.Outer Fabric:100% PL
+1.Outer Fabric:100% CO; 2.Outer Fabric:100% CO; Trim:100% PL
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; 2.Outer Fabric:100% CO; Trim:100% PL
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+1.Outer Fabric:100% VI
+1.Outer Fabric:100% VI
+1.Outer Fabric:100% VI
+1.Outer Fabric:100% VI
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; 2.Outer Fabric:100% CO; Trim:100% PL
+1.Outer Fabric:100% CO; 2.Outer Fabric:100% CO; Trim:100% PL
+1.Outer Fabric:100% CO; 2.Outer Fabric:100% CO; Trim:100% PL
+1.Outer Fabric:100% CO; 2.Outer Fabric:100% CO; Trim:100% PL
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:100% VI
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+Inner 1:100% LE; Outside:100% LE; Sole:100% GO
+Outside:100% ME; Trim:100% LE
+1.Outer Fabric:100% VI
+1.Outer Fabric:100% VI
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+Inner 1:100% LE; Outside:18% SE, 82% VI; Sole:100% LE
+Inner 1:100% LE; Outside:18% SE, 82% VI; Sole:100% LE
+Inner 1:100% LE; Outside:18% SE, 82% VI; Sole:100% LE
+Inner 1:100% LE; Outside:100% LE; Sole:100% LE
+Inner 1:100% LE; Outside:10% EA, 90% PL; Sole:100% GO
+Inner 1:20% EA, 80% PA; Outside:100% LE; Sole:100% GO
+Inner 1:20% EA, 80% PA; Outside:100% LE; Sole:100% GO
+Inner 1:20% EA, 80% PA; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% LE
+Inner 1:100% LE; Outside:100% LE; Sole:100% LE
+Inner 1:100% LE; Outside:18% SE, 82% VI; Sole:100% LE
+Inner 1:100% LE; Outside:100% LE; Sole:100% LE
+Inner 1:100% LE; Outside:100% LE; Sole:100% LE
+Inner 1:100% LE; Outside:100% LE; Sole:100% LE
+Inner 1:100% LE; Outside:10% EA, 90% PL; Sole:100% GO
+Inner 1:20% EA, 80% PA; Outside:100% LE; Sole:100% GO
+Inner 1:20% EA, 80% PA; Outside:100% LE; Sole:100% GO
+Inner 1:20% EA, 80% PA; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% LE
+Inner 1:100% LE; Outside:100% LE; Sole:100% LE
+Inner 1:100% LE; Outside:100% LE; Sole:100% LE
+Inner 1:100% LE; Outside:100% LE; Sole:100% LE
+Inner 1:100% LE; Outside:100% LE; Sole:100% LE
+Inner 1:20% EA, 80% PA; Outside:100% LE; Sole:100% GO
+Inner 1:20% EA, 80% PA; Outside:100% LE; Sole:100% GO
+Inner 1:20% EA, 80% PA; Outside:100% LE; Sole:100% GO
+Inner 1:20% EA, 80% PA; Outside:100% LE; Sole:100% GO
+Inner 1:20% EA, 80% PA; Outside:100% LE; Sole:100% GO
+Inner 1:100% LE; Outside:100% LE; Sole:100% LE
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+Inner 1:100% LE; Outside:100% VI; Sole:100% GO
+1.Outer Fabric:20% EA, 80% PA; Trim:29% SE, 71% AC
+1.Outer Fabric:20% EA, 80% PA; Trim:29% SE, 71% AC
+1.Outer Fabric:100% WO; 2.Outer Fabric:100% COW; Lining 1:100% CU
+1.Outer Fabric:100% WO; 2.Outer Fabric:100% COW; Lining 1:100% CU
+1.Outer Fabric:100% WO; 2.Outer Fabric:100% COW; Lining 1:100% CU
+1.Outer Fabric:20% EA, 80% PA; Trim:29% SE, 71% AC
+1.Outer Fabric:100% WO; 2.Outer Fabric:100% COW; Lining 1:100% CU
+1.Outer Fabric:100% WO; 2.Outer Fabric:100% COW; Lining 1:100% CU
+1.Outer Fabric:100% WO; 2.Outer Fabric:100% COW; Lining 1:100% CU
+1.Outer Fabric:100% WO; 2.Outer Fabric:100% COW; Lining 1:100% CU
+1.Outer Fabric:100% WO; 2.Outer Fabric:100% COW; Lining 1:100% CU
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:20% EA, 80% PA; Trim:29% SE, 71% AC
+1.Outer Fabric:20% EA, 80% PA; Trim:29% SE, 71% AC
+1.Outer Fabric:100% WO; 2.Outer Fabric:100% COW; Lining 1:100% CU
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:12% PL, 28% WO, 60% VI
+1.Outer Fabric:100% WO; 2.Outer Fabric:100% COW; Lining 1:100% CU
+Outside:40% PN, 60% LE
+Outside:100% ME
+Outside:100% ME
+Outside:100% ME
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:20% EA, 80% PA; Trim:29% SE, 71% AC
+1.Outer Fabric:100% WO; 2.Outer Fabric:100% COW; Lining 1:100% CU
+1.Outer Fabric:100% WO; 2.Outer Fabric:100% COW; Lining 1:100% CU
+1.Outer Fabric:100% WO; 2.Outer Fabric:100% COW; Lining 1:100% CU
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:20% EA, 80% PA; Trim:29% SE, 71% AC
+1.Outer Fabric:20% EA, 80% PA; Trim:29% SE, 71% AC
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:20% EA, 80% PA; Trim:29% SE, 71% AC
+1.Outer Fabric:100% WO; 2.Outer Fabric:100% COW; Lining 1:100% CU
+1.Outer Fabric:100% WO; 2.Outer Fabric:100% COW; Lining 1:100% CU
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:1% PA, 1% PM, 9% AC, 14% VI, 18% WS, 57% WO
+1.Outer Fabric:1% PA, 1% PM, 9% AC, 14% VI, 18% WS, 57% WO
+1.Outer Fabric:12% PL, 28% WO, 60% VI
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:12% PL, 28% WO, 60% VI
+1.Outer Fabric:12% PL, 28% WO, 60% VI
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
+1.Outer Fabric:100% CO; Lining 1:100% CO; Trim:100% CO
 1.Outer Fabric:100% PA; 2.Lining:100% CO; Lining 1:100% CU
 1.Outer Fabric:100% PA; 2.Lining:100% CO; Lining 1:100% CU
 1.Outer Fabric:100% PA; 2.Lining:100% CO; Lining 1:100% CU
@@ -26,7 +809,12 @@ Fibers Composition Details
 1.Outer Fabric:100% PA; 2.Lining:100% CO; Lining 1:100% CU
 1.Outer Fabric:100% PA; 2.Lining:100% CO; Lining 1:100% CU
 1.Outer Fabric:100% PA; 2.Lining:100% CO; Lining 1:100% CU
-</textarea>
+1.Outer Fabric:100% PA; 2.Lining:100% CO; Lining 1:100% CU
+1.Outer Fabric:100% PA; 2.Lining:100% CO; Lining 1:100% CU
+1.Outer Fabric:100% PA; 2.Lining:100% CO; Lining 1:100% CU
+1.Outer Fabric:100% PA; 2.Lining:100% CO; Lining 1:100% CU
+1.Outer Fabric:100% PA; 2.Lining:100% CO; Lining 1:100% CU
+1.Outer Fabric:100% PA; 2.Lining:100% CO; Lining 1:100% CU</textarea>
 
 <br>
 <br>
@@ -34,8 +822,11 @@ Fibers Composition Details
 <table>
 <thead>
 <tr>
-  <th>Fiber Map (copy tab delimited from excel: CODE CNNAME)</th>
-  <th>Material Map</th>
+  <th width="50%">Fiber Map</th>
+  <th width="50%">Material Map</th>
+</tr>
+<tr>
+  <th colspan=2>(tab or colon seprated)</th>
 </tr>
 </thead>
 <tbody>
@@ -229,11 +1020,10 @@ XC	纤维素材料
 XT	纸
 ZI	紫貂毛皮
 ZP	聚乳酸纤维
-ZW	鳄鱼皮革
-</textarea>
+ZW	鳄鱼皮革</textarea>
 </td>
 <td>
-<textarea id='matMap' cols=20 rows=40>
+<textarea id='matMap' cols=50 rows=40>
 OUTER FABRIC	面料
 EMBROIDERY	刺绣
 OUTER	外层
@@ -243,8 +1033,7 @@ LINING	衬里
 PADDING	填料
 TRIM	装饰
 SOLE	鞋底
-GUSSET	底裆
-</textarea>
+GUSSET	底裆</textarea>
 </td>
 </tr>
 </table>
@@ -252,9 +1041,30 @@ GUSSET	底裆
 <script>
 
 $(function() {
+  function copy() {
+      var target = document.getElementById('result');
+      var range, select;
+      if (document.createRange) {
+        range = document.createRange();
+        range.selectNode(target)
+        select = window.getSelection();
+        select.removeAllRanges();
+        select.addRange(range);
+        document.execCommand('copy');
+        select.removeAllRanges();
+      } else {
+        range = document.body.createTextRange();
+        range.moveToElementText(target);
+        range.select();
+        document.execCommand('copy');
+      }
+      alert('Translation is copied to clipboard');
+  }
+  $('#copy').click(copy);
   $('#run').click(function() {
     var fiberMap = {};
     var matMap = {};
+    var errors = {};
     var fText = $('#fiberMap').val();
     $(fText.split('\n')).each(function(i,d) {
       var mp = d.split(/\t|:/);
@@ -263,16 +1073,15 @@ $(function() {
     var mText = $('#matMap').val();
     $(mText.split('\n')).each(function(i,d) {
       var mp = d.split(/\t|:/);
-      matMap[mp[0]] = mp[1];
+      matMap[mp[0].toUpperCase()] = mp[1];
     });
 
-    console.log(fiberMap);
-  
+    $('.error').html('');
     var orig = $('#original').val();
     var arr = orig.split('\n');
     var res = '';
 
-    var titleRE = /(Outer Fabric|Outside|Inner|Lining|Sole|Trim|PADDING|EMBROIDERY)/gm;
+    var titleRE = /(\d\.)?([^\d]*?)( \d)?$/;
     $(arr).each(function(i,d) {
       var items = d.split('; ');
       var sect = [];
@@ -281,14 +1090,15 @@ $(function() {
         // f[0] get material section
         // f[1]: comma seperated values
         var comptext = f[0];
-        while((nn = titleRE.exec(f[0])) !== null) {
+        var nn;
+        if((nn = titleRE.exec(f[0])) !== null) {
           if (nn.index === titleRE.lastIndex) {
             titleRE.lastIndex++;
           }
-          if (matMap[nn[0]]) {
-            comptext = matMap[nn[0]];
+          if (matMap[nn[2].toUpperCase()]) {
+            comptext = (nn[1] || '' )+ matMap[nn[2].toUpperCase()] + (nn[3] || '');
           } else {
-            console.log('Mapping missing: ' + nn[0]);
+            errors["Material: " + nn[2]] = 1;
           }
         }
         var comp = [];
@@ -297,14 +1107,25 @@ $(function() {
           if (m.index === regex.lastIndex) {
             regex.lastIndex++;
           }
-          comp.push(m[1] + ' ' + (fiberMap[m[2]] || m[2]));
+          if (fiberMap[m[2]]) {
+            comp.push(m[1] + ' ' + (fiberMap[m[2]] || m[2]));
+          } else {
+            errors["Fiber: " + m[2]] = 1;
+          }
         }
         comptext += ":" + comp.join(', ');
         sect.push(comptext);
       });
       res += sect.join('; ') + '\n';
     });
-    $('#result').html(res);
+    $('#result').html(res).show();
+    $('#copy').show();
+    if (errors) {
+      $('.error').append('<h4>Missing Maps</h4>');
+      $.each(errors, function(key, value) {
+        $('.error').append('<div class="red">' + key + '</div>');
+      });
+    }
   });
 });
 </script>
