@@ -32,7 +32,7 @@ pre {border: 1px solid black; background-color:yellow}
      <pre id='result'></pre>
    </td>
    <td valign='top'>
-<textarea id='original' rows=40 cols=200>
+<textarea id='original' rows=10 cols=200>
 Fibers Composition Details
 1.Outer Fabric:100% PY; 2.Lining:100% CO; Lining 1:37% CU, 63% VI
 Lining 1:100% CO; Outside:100% VL
@@ -1079,12 +1079,18 @@ $(function() {
     var errors = {};
     var fText = $('#fiberMap').val();
     $(fText.split('\n')).each(function(i,d) {
-      var mp = d.split(/\t|:/);
+      var mp = d.split(/\t|:\s*/);
+      if(fiberMap[mp[0]]) {
+        errors['Duplicate fiber mapping: ' + mp[0]] = 1;
+      }
       fiberMap[mp[0]] = mp[1];
     });
     var mText = $('#matMap').val();
     $(mText.split('\n')).each(function(i,d) {
-      var mp = d.split(/\t|:/);
+      var mp = d.split(/\t|:\s*/);
+      if(matMap[mp[0]]) {
+        errors['Duplicate material mapping: ' + mp[0]] = 1;
+      }
       matMap[mp[0].toUpperCase()] = mp[1];
     });
 
