@@ -16,14 +16,21 @@ pre {border: 1px solid black; background-color:yellow}
 <br>
 <div class='error'>
 </div>
+<table>
+<tr>
+  <td>
 <h3>Translation</h3>
 <button id='copy'>Copy to clipboard</button>
-<pre id='result'>
-
-</pre>
-<br>
-<h3>Original</h3>
-<br>
+  </td>
+  <td>
+    <h3>Original</h3>
+  </td>
+ </tr>
+ <tr>
+   <td>
+     <pre id='result'></pre>
+   </td>
+   <td>
 <textarea id='original' rows=40 cols=200>
 Fibers Composition Details
 1.Outer Fabric:100% PY; 2.Lining:100% CO; Lining 1:37% CU, 63% VI
@@ -816,6 +823,10 @@ Outside:100% ME
 1.Outer Fabric:100% PA; 2.Lining:100% CO; Lining 1:100% CU
 1.Outer Fabric:100% PA; 2.Lining:100% CO; Lining 1:100% CU</textarea>
 
+   </td>
+  </tr>
+  </table>
+  
 <br>
 <br>
 <br>
@@ -826,7 +837,7 @@ Outside:100% ME
   <th width="50%">Material Map</th>
 </tr>
 <tr>
-  <th colspan=2>(tab or colon seprated)</th>
+  <th colspan=2 style='font-size:60%'>(tab or colon separated)</th>
 </tr>
 </thead>
 <tbody>
