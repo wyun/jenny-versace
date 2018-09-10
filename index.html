@@ -1139,7 +1139,7 @@ $(function() {
     });
     $('#result').html(res).show();
     $('#copy,#transtitle').show();
-    if (errors) {
+    if (Object.keys(errors).length) {
       $('.error').append('<h4>Missing Maps</h4>');
       $.each(errors, function(key, value) {
         $('.error').append('<div class="red">' + key + '</div>');
