@@ -285,9 +285,10 @@ $(function() {
           if (nn.index === titleRE.lastIndex) {
             titleRE.lastIndex++;
           }
-          if (matMap[nn[0]) {
+          if (matMap[nn[0]]) {
             comptext = matMap[nn[0]];
           } else {
+            console.log('Mapping missing: ' + nn[0]);
           }
         }
         var comp = [];
