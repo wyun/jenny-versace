@@ -6,7 +6,7 @@
 <style>
 .red {color: red}
 pre {border: 1px solid black; background-color:yellow}
-#copy, #result {display: none;}
+#copy, #result,#transtitle {display: none;}
 </style>
 </head>
 <body>
@@ -19,7 +19,7 @@ pre {border: 1px solid black; background-color:yellow}
 <table>
 <tr>
   <td>
-<h3>Translation</h3>
+<h3 id='transtitle'>Translation</h3>
 <button id='copy'>Copy to clipboard</button>
   </td>
   <td>
@@ -1131,7 +1131,7 @@ $(function() {
       res += sect.join('; ') + '\n';
     });
     $('#result').html(res).show();
-    $('#copy').show();
+    $('#copy,#transtitle').show();
     if (errors) {
       $('.error').append('<h4>Missing Maps</h4>');
       $.each(errors, function(key, value) {
