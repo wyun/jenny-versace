@@ -6,6 +6,7 @@
 <style>
 body, #result, textarea {font-size: 12px; line-height: 20px}
 .red {color: red}
+.blue {color: blue}
 .error {background-color: lightpink; padding: 20px; border: 1px solid #cc0000;}
 pre {border: 1px solid black; background-color:yellow}
 #copy, #result,#transtitle,.error {display: none;}
@@ -377,25 +378,30 @@ $(function() {
           lineObj[mat] = [];
         }
         var comp = [];
-        var regex = /(\d+%) ([A-Z]+)/gm;
+        var regex = /((\d+)%) ([A-Z]+)/gm;
+        var totalPct = 0;
         while ((m = regex.exec(f[1])) !== null) {
           if (m.index === regex.lastIndex) {
             regex.lastIndex++;
           }
-
-          if (fiberMap[m[2]]) {
-            m[2] = fiberMap[m[2]];
-            if (m[1] === '100%' && m[2].search('革') !== -1 ) {
+          totalPct += parseInt(m[2]);
+          if (fiberMap[m[3]]) {
+            m[3] = fiberMap[m[3]];
+            if (m[1] === '100%' && m[3].search('革') !== -1 ) {
               m[1] = '';
             }
           } else {
-            errors["Fiber: " + m[2]] = 1;
-            m[2] = "<span class='red'>" + m[2] + "</span>";
+            errors["Fiber: " + m[3]] = 1;
+            m[3] = "<span class='red'>" + m[3] + "</span>";
           }
-          comp.push((m[1] ? m[1] : '') + m[2]);
+          comp.push((m[1] ? m[1] : '') + m[3]);
           //lineObj[mat].push((m[1] ? m[1] + ' ' : '') + m[2]);
         }
         if (comptext.length > 0) {
+          if (totalPct < 100) {
+            comp.push("<span class='blue'>[Error: total is "+totalPct+"%]</span>");
+            errors['There are error with less than 100%.'] = 1;
+          }
           lineObj[mat].push(comp);
           comptext += ":" + comp.join(' ');
         } else {
@@ -413,7 +419,6 @@ $(function() {
           $.each(lineObj[a], function(j, b){
             if (b.length > 1) {
               b = b.sort(function(x, y){
-                console.log(parseInt(y) + ' ' + parseInt(x))
                 return parseInt(y) - parseInt(x);
               });
             }
