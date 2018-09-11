@@ -1097,7 +1097,7 @@ $(function() {
       matMap[mp[0].toUpperCase()] = mp[1];
     });
 
-    $('.error').html('');
+    $('.error').html('').hide();
     var orig = $('#original').val();
     var arr = orig.split('\n');
     var res = '';
@@ -1144,7 +1144,7 @@ $(function() {
     $('#result').html(res).show();
     $('#copy,#transtitle').show();
     if (Object.keys(errors).length) {
-      $('.error').append('<h4>Missing Maps</h4>');
+      $('.error').append('<h4>Missing Maps</h4>').show();
       $.each(errors, function(key, value) {
         $('.error').append('<div class="red">' + key + '</div>');
       });
