@@ -1144,7 +1144,7 @@ $(function() {
     $('#result').html(res).show();
     $('#copy,#transtitle').show();
     if (Object.keys(errors).length) {
-      $('.error').append('<h4>Missing Maps</h4>').show();
+      $('.error').append('<h3>Missing Maps</h3>').show();
       $.each(errors, function(key, value) {
         $('.error').append('<div class="red">' + key + '</div>');
       });
