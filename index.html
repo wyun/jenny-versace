@@ -376,7 +376,9 @@ $(function() {
             comptext = "<span class='red'>"+ f[0] + "</span>";
             errors["Material: " + nn[2]] = 1;
             invalidMat[nn[2]] = 1;
-            matArr.push(nn[2]);
+            if (matArr[matArr.length-1] !== nn[2]) {
+              matArr.push(nn[2]);
+            }
           }
         }
         if (!lineObj[mat]) {
