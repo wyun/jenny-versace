@@ -1131,7 +1131,7 @@ $(function() {
           if (fiberMap[m[2]]) {
             comp.push(m[1] + ' ' + fiberMap[m[2]]);
           } else {
-            comp.push(f[1]);
+            comp.push("<span class='red'>" + f[1] + "</span>")
             errors["Fiber: " + m[2]] = 1;
           }
         }
