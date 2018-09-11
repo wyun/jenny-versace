@@ -408,7 +408,7 @@ $(function() {
         if(lineObj[a]) {
           var ct = 0;
           $.each(lineObj[a], function(j, b){
-            newOrder.push((invalidMat[a] ? '<span class="red">'+a+'</span>' : a) + (ct > 0 ? ct : '') +': ' + b);
+            newOrder.push((invalidMat[a] ? '<span class="red">'+a+'</span>' : a) + (ct > 0 ? ct : '') +': ' + b.join(' '));
             ct++;
           });
         }
