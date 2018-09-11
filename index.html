@@ -163,7 +163,7 @@ $(function() {
             m[2] = "<span class='red'>" + m[2] + "</span>";
             errors["Fiber: " + m[2]] = 1;
           }
-          comp.push((m[1] ? M[1] + ' ' : '') + fiberMap[m[2]]);
+          comp.push((m[1] ? m[1] + ' ' : '') + fiberMap[m[2]]);
         }
         if (comptext.length > 0) {
           comptext += ":" + comp.join(' ');
