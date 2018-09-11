@@ -411,15 +411,19 @@ $(function() {
           var prevTxt = '';
           var addLen = lineObj[a].length > 1 ? 1 : 0;
           $.each(lineObj[a], function(j, b){
+            if (b.length > 1) {
+              b = b.sort(function(x, y){
+                console.log(parseInt(y) + ' ' + parseInt(x))
+                return parseInt(y) - parseInt(x);
+              });
+            }
             var txt = b.join(' ');
-            console.log(a + ' ' + txt + ' comp =>>');
             if (prevA === a && prevTxt === txt) {
               return;
             }
             newOrder.push((invalidMat[a] ? '<span class="red">'+a+'</span>' : a) + (addLen ? ct : '') +': ' + txt);
             prevA = a;
             prevTxt = txt;
-            console.log("H: " + prevA + ' ' + prevTxt);
             ct++;
             
           });
