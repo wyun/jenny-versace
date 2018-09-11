@@ -375,9 +375,9 @@ $(function() {
           } else {
             comptext = "<span class='red'>"+ f[0] + "</span>";
             errors["Material map missing: " + nn[2]] = 1;
-            invalidMat[nn[2]] = 1;
-            if (matArr[matArr.length-1] !== nn[2]) {
+            if (!invalidMat[nn[2]]) {
               matArr.push(nn[2]);
+              invalidMat[nn[2]] = 1;
             }
           }
         }
