@@ -400,7 +400,7 @@ $(function() {
         if (comptext.length > 0) {
           if (totalPct !== 100 && totalPct !== 0) {
             comp.push("<span class='blue'>[Error: total is "+totalPct+"%]</span>");
-            errors['There are error with less than 100%.'] = 1;
+            errors['Total % is not equal to 100%.'] = 1;
           }
           lineObj[mat].push(comp);
           comptext += ":" + comp.join(' ');
@@ -439,7 +439,7 @@ $(function() {
     $('#result').html(res).show();
     $('#copy,#transtitle').show();
     if (Object.keys(errors).length) {
-      $('.error').append('<h3>Missing Maps</h3>').show();
+      $('.error').append('<h3>Error</h3>').show();
       $.each(errors, function(key, value) {
         $('.error').append('<div class="red">' + key + '</div>');
       });
