@@ -374,7 +374,7 @@ $(function() {
             mat = matMap[nn[2].toUpperCase()];
           } else {
             comptext = "<span class='red'>"+ f[0] + "</span>";
-            errors["Material: " + nn[2]] = 1;
+            errors["Material map missing: " + nn[2]] = 1;
             invalidMat[nn[2]] = 1;
             if (matArr[matArr.length-1] !== nn[2]) {
               matArr.push(nn[2]);
@@ -398,7 +398,7 @@ $(function() {
               m[1] = '';
             }
           } else {
-            errors["Fiber: " + m[3]] = 1;
+            errors["Fiber map missing: " + m[3]] = 1;
             m[3] = "<span class='red'>" + m[3] + "</span>";
           }
           comp.push((m[1] ? m[1] : '') + m[3]);
