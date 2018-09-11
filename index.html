@@ -137,7 +137,7 @@ $(function() {
         // f[1]: comma seperated values
         var comptext = f[0];
         var nn;
-        if((nn = titleRE.exec(f[0])) !== null) {
+        if(comptext.length > 0 && (nn = titleRE.exec(f[0])) !== null) {
           if (nn.index === titleRE.lastIndex) {
             titleRE.lastIndex++;
           }
