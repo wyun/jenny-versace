@@ -37,7 +37,7 @@ pre {border: 1px solid black; background-color:yellow}
    </td>
    <td valign='top'>
     <textarea id='original' rows=10 cols=200>Fibers Composition Details
-1.Outer Fabric:100% PY; 2.Lining:100% CO; Lining 1:37% CU, 63% VI
+1.Outer Fabric:100% PY; 2.Lining:100% CO; Lining 1:37% CU, 62% VI
 Lining 1:100% CO; Outside:100% VL
 Lining 1:100% CO; Outside:100% VL
 1.Outer Fabric:100% SE; 2.Outer Fabric:100% SE; 2.Trim:100% VL; Trim:100% AOS
@@ -398,7 +398,7 @@ $(function() {
           //lineObj[mat].push((m[1] ? m[1] + ' ' : '') + m[2]);
         }
         if (comptext.length > 0) {
-          if (totalPct < 100) {
+          if (totalPct !== 100 && totalPct !== 0) {
             comp.push("<span class='blue'>[Error: total is "+totalPct+"%]</span>");
             errors['There are error with less than 100%.'] = 1;
           }
