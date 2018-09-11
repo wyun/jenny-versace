@@ -1118,6 +1118,7 @@ $(function() {
           if (matMap[nn[2].toUpperCase()]) {
             comptext = (nn[1] || '' )+ matMap[nn[2].toUpperCase()] + (nn[3] || '');
           } else {
+            comptext = "<span class='red'>"+ matMap[nn[2].toUpperCase()] + (</span>);
             errors["Material: " + nn[2]] = 1;
           }
         }
