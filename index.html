@@ -107,15 +107,19 @@ $(function() {
       if(fiberMap[mp[0]]) {
         errors['Duplicate fiber mapping: ' + mp[0]] = 1;
       }
-      fiberMap[mp[0]] = mp[1];
+      if (mp[0]) {
+        fiberMap[mp[0]] = mp[1];
+      }
     });
     var mText = $('#matMap').val();
     $(mText.split('\n')).each(function(i,d) {
       var mp = d.split(/\t|:\s*/);
-      if(matMap[mp[0]]) {
+      if(matMap[mp[0].toUpperCase()]) {
         errors['Duplicate material mapping: ' + mp[0]] = 1;
       }
-      matMap[mp[0].toUpperCase()] = mp[1];
+      if(mp[0]) {
+        matMap[mp[0].toUpperCase()] = mp[1];
+      }
     });
 
     $('.error').html('').hide();
