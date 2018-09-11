@@ -39,6 +39,7 @@ pre {border: 1px solid black; background-color:yellow}
 1.Outer Fabric:100% PY; 2.Lining:100% CO; Lining 1:37% CU, 63% VI
 Lining 1:100% CO; Outside:100% VL
 Lining 1:100% CO; Outside:100% VL
+1.Outer Fabric:100% SE; 2.Outer Fabric:100% SE; 2.Trim:100% VL; Trim:100% AOS
 2.Trim:100% NY; Lining 1:100% CO; Outside:100% PL; Trim:100% VL
 1.Outer Fabric:1% PA, 20% PM, 79% VI
 1.Outer Fabric:1% PA, 20% PM, 79% VI
@@ -384,7 +385,7 @@ $(function() {
 
           if (fiberMap[m[2]]) {
             m[2] = fiberMap[m[2]];
-            if (m[1] === '100%') {
+            if (m[1] === '100%' && m[2].search('革') !== -1 ) {
               m[1] = '';
             }
           } else {
@@ -402,14 +403,25 @@ $(function() {
         }
         sect.push(comptext);
       });
-      console.log(lineObj);
       var newOrder = [];
       $.each(matArr, function(i, a) {
         if(lineObj[a]) {
-          var ct = 0;
+          var ct = 1;
+          var prevA = '';
+          var prevTxt = '';
+          var addLen = lineObj[a].length > 1 ? 1 : 0;
           $.each(lineObj[a], function(j, b){
-            newOrder.push((invalidMat[a] ? '<span class="red">'+a+'</span>' : a) + (ct > 0 ? ct : '') +': ' + b.join(' '));
+            var txt = b.join(' ');
+            console.log(a + ' ' + txt + ' comp =>>');
+            if (prevA === a && prevTxt === txt) {
+              return;
+            }
+            newOrder.push((invalidMat[a] ? '<span class="red">'+a+'</span>' : a) + (addLen ? ct : '') +': ' + txt);
+            prevA = a;
+            prevTxt = txt;
+            console.log("H: " + prevA + ' ' + prevTxt);
             ct++;
+            
           });
         }
       });
