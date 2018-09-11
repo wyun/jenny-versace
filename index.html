@@ -25,11 +25,12 @@ pre {border: 1px solid #ccc; background-color:#f9ffec}
 <table>
 <tr>
   <td>
-<h3 id='transtitle'>中文翻译</h3>
-<button id='copy'> 复制到粘贴板 </button>
+    <h3 id='transtitle'>中文翻译</h3>
+    <button id='copy'> 复制到粘贴板 </button>
   </td>
   <td>
     <h3>英文</h3>
+    <button id='clearTxt'> 清空 </button>
   </td>
  </tr>
  <tr>
@@ -311,6 +312,9 @@ $(function() {
       }
       alert('Translation is copied to clipboard');
   }
+  $('#clearTxt').click(function(){
+    $('#original').val('');
+  });
   $('#copy').click(copy);
   $('#run').click(function() {
     var fiberMap = {};
