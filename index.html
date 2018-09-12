@@ -38,8 +38,7 @@ pre {border: 1px solid #ccc; background-color:#f9ffec}
      <pre id='result'></pre>
    </td>
    <td valign='top'>
-    <textarea id='original' rows=10 cols=200>Fibers Composition Details
-1.Outer Fabric:100% PY; 2.Lining:100% CO; Lining 1:37% CU, 62% VI
+    <textarea id='original' rows=10 cols=200>1.Outer Fabric:100% PY; 2.Lining:100% CO; Lining 1:37% CU, 62% VI
 Lining 1:100% CO; Outside:100% VL
 Lining 1:100% CO; Outside:100% VL
 1.Outer Fabric:100% SE; 2.Outer Fabric:100% SE; 2.Trim:100% VL; Trim:100% AOS
@@ -430,9 +429,11 @@ $(function() {
               });
             }
             var txt = b.join(' ');
+            /*
             if (prevA === a && prevTxt === txt) {
               return;
-            }
+            } 
+            */
             newOrder.push((invalidMat[a] ? '<span class="red">'+a+'</span>' : a) + (addLen ? ct : '') +': ' + txt);
             prevA = a;
             prevTxt = txt;
