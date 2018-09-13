@@ -354,7 +354,7 @@ $(function() {
 
     var titleRE = /(\d\.)?([^\d]*?)( \d)?$/;
     $(arr).each(function(i,d) {
-      var items = d.split('; ');
+    var items = d.split(/\s*;\s*/);
       var sect = [];
       var lineObj = {};
       $(items).each(function(j, it){
