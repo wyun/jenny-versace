@@ -1,5 +1,3 @@
-import $ from 'jquery';
-
 $(function () {
   $.get('example.txt', function (data) {
     $('#original').val(data);
@@ -104,22 +102,22 @@ $(function () {
         var comp = [];
         var regex = /((\d+)%) ([A-Z]+)/gm;
         var totalPct = 0;
-        while ((m = regex.exec(f[1])) !== null) {
-          if (m.index === regex.lastIndex) {
+        while ((mm = regex.exec(f[1])) !== null) {
+          if (mm.index === regex.lastIndex) {
             regex.lastIndex++;
           }
-          totalPct += parseInt(m[2]);
-          if (fiberMap[m[3]]) {
-            m[3] = fiberMap[m[3]];
-            if (m[1] === '100%' && m[3].search('革') !== -1) {
-              m[1] = '';
+          totalPct += parseInt(mm[2]);
+          if (fiberMap[mm[3]]) {
+            mm[3] = fiberMap[mm[3]];
+            if (mm[1] === '100%' && mm[3].search('革') !== -1) {
+              mm[1] = '';
             }
           } else {
-            errors['Fiber map missing: ' + m[3]] = 1;
-            m[3] = "<span class='red'>" + m[3] + '</span>';
+            errors['Fiber map missing: ' + mm[3]] = 1;
+            mm[3] = "<span class='red'>" + mm[3] + '</span>';
           }
-          comp.push((m[1] ? m[1] : '') + m[3]);
-          //lineObj[mat].push((m[1] ? m[1] + ' ' : '') + m[2]);
+          comp.push((mm[1] ? mm[1] : '') + mm[3]);
+          //lineObj[mat].push((mm[1] ? mm[1] + ' ' : '') + mm[2]);
         }
         if (comptext.length > 0) {
           if (totalPct !== 100 && totalPct !== 0) {
