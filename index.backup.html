@@ -2,7 +2,6 @@
   <head>
     <title>Versace Translator</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="/func.min.js"></script>
     <style>
       body,
       #result,
@@ -46,7 +45,7 @@
     </style>
   </head>
   <body>
-    <h1>Versace - 工具箱</h1>
+    <h1>Versace - Jenny Wang 工具箱</h1>
     <button id="run">翻译</button>
     <br />
     <br />
@@ -464,10 +463,10 @@ SOLE	鞋底
                   }
                   var txt = b.join(' ');
                   /*
-              if (prevA === a && prevTxt === txt) {
-                return;
-              } 
-              */
+            if (prevA === a && prevTxt === txt) {
+              return;
+            } 
+            */
                   newOrder.push(
                     (invalidMat[a] ? '<span class="red">' + a + '</span>' : a) +
                       (addLen ? ct : '') +
@@ -494,8 +493,5 @@ SOLE	鞋底
         });
       });
     </script>
-    <caption>
-      Valid till 12/5/2022
-    </caption>
   </body>
 </html>
