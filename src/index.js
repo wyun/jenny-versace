@@ -1,4 +1,10 @@
 $(function () {
+  var validCheck = Date.parse('06 DEC 2022 00:00:00 GMT') - Date.now();
+  if (validCheck < 0) {
+    $('body').html(
+      '<h1>License Expired</h1><p>Contact <a href="weixin://dl/chat?WYunUSA">WYunUSA on WeChat</a> to renew.</p>'
+    );
+  }
   $.get('example.txt', function (data) {
     $('#original').val(data);
   });
