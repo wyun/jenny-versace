@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 $(function () {
   $.get('example.txt', function (data) {
     $('#original').val(data);

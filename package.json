@@ -1,0 +1,20 @@
+{
+  "name": "jenny-versace",
+  "version": "1.0.0",
+  "description": "Versace Translator - Translate materials and fiber from English mapping to Chinese - Sort fiber percentage from high to low - Output order is set to Material Mapping's existing order, from top to bottom.  - 'Copy to clipboard' button is added - Highlight errors in the output",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js"
+  },
+  "author": "YWangUSA",
+  "license": "ISC",
+  "homepage": "https://versacetrans.netlify.app",
+  "dependencies": {
+    "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  }
+}

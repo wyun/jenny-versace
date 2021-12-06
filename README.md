@@ -6,3 +6,9 @@
 - Output order is set to Material Mapping's existing order, from top to bottom. 
 - 'Copy to clipboard' button is added
 - Highlight errors in the output
+
+## Build
+Generate main.js file.
+```
+npm run build
+```
